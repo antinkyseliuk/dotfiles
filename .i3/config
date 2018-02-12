@@ -60,7 +60,8 @@ bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+F3 exec thunar
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu thunar
-bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F4 exec gpmdp
+# bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -147,7 +148,7 @@ set $ws3 
 set $ws4 
 set $ws5 
 set $ws6 
-set $ws7 7
+set $ws7 
 set $ws8 8
 
 # switch to workspace
@@ -187,8 +188,12 @@ assign [class="Telegram"] $ws4
 # assign [class="Pcmanfm"] $ws3
 assign [class="Skype"] $ws4
 assign [class="jetbrains-android-studio"] $ws6
+assign [class="Google Play Music Desktop Player"] $ws7
 
 # Open specific applications in floating mode
+for_window [class="jetbrains-studio"] floating enable
+for_window [class="Google-chrome"] floating enable
+for_window [class="Google Play Music Desktop Player"] floating enable
 for_window [class="TeamViewer"] floating enable
 for_window [title="Thunar"] floating enable
 for_window [title="Telegram"] floating enable
