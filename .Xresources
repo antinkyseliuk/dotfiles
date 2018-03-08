@@ -14,7 +14,7 @@ urxvt*saveLines: 5000
 urxvt*scrollBar: false
 urxvt*internalBorder: 10
 
-urxvt*font: xft:Inconsolata:size=11
+urxvt*font: xft:Inconsolata:size=11,xft:Inconsolata\ For\ Powerline:size=11
 urxvt*boldFont: xft:Inconsolata:bold:size=11
 urxvt*italicFont: xft:Inconsolata:italic:size=11
 urxvt*bolditalicFont: xft:Inconsolata:bolditalic:size=11

@@ -71,7 +71,7 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-# focus_follows_mouse no
+focus_follows_mouse no
 
 # change focus
 bindsym $mod+h focus left
@@ -191,6 +191,7 @@ assign [class="jetbrains-android-studio"] $ws6
 assign [class="Google Play Music Desktop Player"] $ws7
 
 # Open specific applications in floating mode
+for_window [title="Emulator"] floating enable
 for_window [class="jetbrains-studio"] floating enable
 for_window [class="Google-chrome"] floating enable
 for_window [class="Google Play Music Desktop Player"] floating enable

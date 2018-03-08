@@ -85,10 +85,10 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 """
 
+let g:powerline_pycmd='py3'
+set laststatus=2
 
 let mapleader=" "
-
-let g:powerline_pycmd='py3'
 
 highlight BadWhitespace ctermbg=red guibg=red
 " Display tabs at the beginning of a line in Python mode as bad.
