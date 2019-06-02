@@ -2,7 +2,7 @@
 rofi.modi:drun
 
 ! "Window width" Set from: Default
-rofi.width:100
+rofi.width:500
 
 ! "Number of lines" Set from: Default
 rofi.lines:5
@@ -27,16 +27,16 @@ rofi.color-window:	#414A59,	#414A59
 rofi.bw:0
 
 ! "Location on screen" Set from: Default
-! rofi.location:                       0
+rofi.location:                       0
 
 ! "Padding" Set from: Default
-rofi.padding:470
+rofi.padding:10
 
 ! "Y-offset relative to location" Set from: Default
 rofi.yoffset:0
 
 ! "X-offset relative to location" Set from: Default
-! rofi.xoffset:20
+rofi.xoffset:0
 
 ! "Always show number of lines" Set from: Default
 ! rofi.fixed-num-lines:                true
@@ -54,7 +54,7 @@ rofi.yoffset:0
 ! rofi.run-command:                    {cmd}
 
 ! "Command to get extra run targets" Set from: Default
-! rofi.run-list-command:               
+! rofi.run-list-command:
 
 ! "Run command to execute that runs in shell" Set from: Default
 ! rofi.run-shell-command:              {terminal} -e {cmd}
@@ -108,7 +108,7 @@ rofi.eh:1
 ! rofi.line-padding:                   1
 
 ! "Pre-set filter" Set from: Default
-! rofi.filter:                         
+! rofi.filter:
 
 ! "Separator style (none, dash, solid)" Set from: Default
 rofi.separator-style:none
@@ -312,20 +312,19 @@ rofi.scrollbar-width:0
 ! rofi.kb-custom-19:                   Alt+parenleft
 
 ! "The display name of this browser" Set from: Default
-! rofi.display-ssh:                    
+! rofi.display-ssh:
 
 ! "The display name of this browser" Set from: Default
-! rofi.display-run:                    
+! rofi.display-run:
 
 ! "The display name of this browser" Set from: Default
-! rofi.display-drun:                   
+! rofi.display-drun:
 
 ! "The display name of this browser" Set from: Default
-! rofi.display-window:                 
+! rofi.display-window:
 
 ! "The display name of this browser" Set from: Default
-! rofi.display-windowcd:               
+! rofi.display-windowcd:
 
 ! "The display name of this browser" Set from: Default
-! rofi.display-combi:                  
-
+! rofi.display-combi:

@@ -7,11 +7,11 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 0
-# new_float normal
+new_window pixel 1
+new_float normal
 
 # Hide borders
-# hide_edge_borders on
+hide_edge_borders on
 
 # change borders
 bindsym $mod+u border none
@@ -26,7 +26,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id urxvt
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -42,7 +42,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-#exec --no-startup-id volumeicon
+exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
@@ -56,19 +56,17 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec google-chrome-stable
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
-# bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu thunar
-bindsym $mod+F4 exec gpmdp
-# bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+#bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 focus_follows_mouse no
@@ -182,19 +180,20 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-assign [class="Google-chrome"] $ws1
+assign [class="Firefox"] $ws1
 assign [class="Telegram"] $ws4
-# assign [class="Pcmanfm"] $ws3
 assign [class="Skype"] $ws4
 assign [class="jetbrains-android-studio"] $ws6
-assign [class="Google Play Music Desktop Player"] $ws7
+assign [class="Atom"] $ws3
+# assign [class="Thunderbird"] $ws1
+# assign [class="Pcmanfm"] $ws3
+# assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
+for_window [title="Atom"] floating enable
 for_window [title="Emulator"] floating enable
 for_window [class="jetbrains-studio"] floating enable
-for_window [class="Google-chrome"] floating enable
-for_window [class="Google Play Music Desktop Player"] floating enable
+for_window [class="Firefox"] floating enable
 for_window [class="TeamViewer"] floating enable
 for_window [title="Thunar"] floating enable
 for_window [title="Telegram"] floating enable
@@ -283,15 +282,13 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-exec --no-startup-id skypeforlinux
-exec --no-startup-id telegram-desktop
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+# exec --no-startup-id manjaro-hello
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
@@ -299,10 +296,7 @@ exec --no-startup-id clipit
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-
-exec_always --no-startup-id xset -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -316,24 +310,66 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # to:
 # background $term_background
 # Same logic applied to everything else.
-#
-#set_from_resource $c0 color0
-#set_from_resource $c1 color1
-#set_from_resource $c2 color2
-#set_from_resource $c3 color3
-#set_from_resource $c4 color4
-#set_from_resource $c5 color5
-#set_from_resource $c6 color6
-#set_from_resource $c7 color7
-#set_from_resource $c8 color8
+#set_from_resource $term_background background
+#set_from_resource $term_foreground foreground
+#set_from_resource $term_color0     color0
+#set_from_resource $term_color1     color1
+#set_from_resource $term_color2     color2
+#set_from_resource $term_color3     color3
+#set_from_resource $term_color4     color4
+#set_from_resource $term_color5     color5
+#set_from_resource $term_color6     color6
+#set_from_resource $term_color7     color7
+#set_from_resource $term_color8     color8
+#set_from_resource $term_color9     color9
+#set_from_resource $term_color10    color10
+#set_from_resource $term_color11    color11
+#set_from_resource $term_color12    color12
+#set_from_resource $term_color13    color13
+#set_from_resource $term_color14    color14
+#set_from_resource $term_color15    color15
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+#bar {
+# 	i3bar_command i3bar
+# 	status_command i3status
+# 	position bottom
+
+## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#	tray_output primary
+#	tray_output eDP1
+
+# 	bindsym button4 nop
+# 	bindsym button5 nop
+#   font xft:URWGothic-Book 11
+# 	strip_workspace_numbers yes
+
+#    colors {
+#        background #222D31
+#        statusline #F9FAF9
+#        separator  #454947
+
+#                      border  backgr. text
+#        focused_workspace  #F9FAF9 #16a085 #292F34
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #222D31 #EEE8D5
+#        binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#    }
+#}
+
+# hide/unhide i3status bar
+#bindsym $mod+m bar mode toggle
 
 # Theme colors
-# class                 border  backgr. text    indicator child_border
-#client.focused          $c7     $c0    $c7      #2e9ef4   #285577
-#client.focused_inactive $c2     $c0    $c6      #484e50   #5f676a
-#client.unfocused        $c0     $c0    #888888  #292d2e   #222222
-#client.urgent           $c0     $c0    #ffffff  #900000   #900000
-#client.placeholder      $c0     $c0    #ffffff  #000000   #0c0c0c
+# class                   border  backgr. text    indic.   child_border
+#  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+#  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+#  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+#  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+#  client.placeholder      #000000 #0c0c0c #ffffff #000000
+
+#  client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
