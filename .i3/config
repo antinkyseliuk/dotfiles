@@ -140,14 +140,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 
-set $ws2 
-set $ws3 
-set $ws4 
-set $ws5 
-set $ws6 
-set $ws7 
-set $ws8 8
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:
+set $ws6 6:
+set $ws7 7:
+set $ws9 8:8
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -183,18 +183,18 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="Firefox"] $ws1
 assign [class="Telegram"] $ws4
 assign [class="Skype"] $ws4
-assign [class="jetbrains-android-studio"] $ws6
+assign [class="jetbrains-studio"] $ws6
 assign [class="Atom"] $ws3
 # assign [class="Thunderbird"] $ws1
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
-for_window [title="Atom"] floating enable
+# for_window [title="Atom"] floating enable
 for_window [title="Emulator"] floating enable
-for_window [class="jetbrains-studio"] floating enable
-for_window [class="Firefox"] floating enable
-for_window [class="TeamViewer"] floating enable
+# for_window [class="jetbrains-studio"] floating enable
+# for_window [class="Firefox"] floating enable
+# for_window [class="TeamViewer"] floating enable
 for_window [title="Thunar"] floating enable
 for_window [title="Telegram"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -241,7 +241,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym l exec --no-startup-id dm-tool lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -279,14 +279,14 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id dm-tool lock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
+# exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id manjaro-hello
 # exec --no-startup-id blueman-applet
@@ -387,7 +387,7 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
